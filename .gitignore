@@ -1,0 +1,11 @@
+log/*log
+log/
+tmp
+public/system/upload/**/*
+assets/**/*
+config/database.yml
+db/test.sqlite3
+*~
+**/*~
+public/*/cache/*
+.project
