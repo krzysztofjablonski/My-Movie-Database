@@ -9,9 +9,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20091222192558) do
 
 # Could not dump table "htmldb_plan_table" because of following StandardError
 #   Unknown type 'LONG' for column 'other'
+
+  create_table "movies", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "director"
+    t.datetime "premiere"
+    t.integer  "photo_id",           :precision => 38, :scale => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size",    :precision => 38, :scale => 0
+    t.datetime "photo_updated_at"
+  end
 
 end

@@ -1,0 +1,27 @@
+- form_for @movie, :html => { :multipart => true } do |f|
+  = f.error_messages
+  %p
+    = f.label :title
+  %p
+    = f.text_field :title
+  %p
+    = f.label :description
+  %p
+    = f.text_area :description
+  %p
+    = f.label :director
+  %p
+    = f.text_field :director 
+  %p
+    = f.label :premiere 
+  %p
+    = f.text_field :premiere
+  %p
+    =f.label :photo
+  %p
+    = image_tag @movie.photo.url(:small)
+  %p
+    = f.file_field :photo
+  %p
+    = f.submit 'Wyślij'
+

@@ -1,0 +1,23 @@
+.box.rounded
+  %span.photo
+    = link_to image_tag(movie.photo.url(:small), :alt => movie.title), movie.photo.url, :rel => "prettyPhoto" 
+  %h2
+    =h movie.title
+  %p
+    %strong= "Reżyser: "
+    =h movie.director 
+  %p
+    %strong= "Premiera: "
+    =h movie.premiere 
+  .clear
+  %p
+    %p
+      %strong= "Opis:"
+    =h movie.description
+  .clear 
+  .rfloat
+    = link_to 'Edit', edit_movie_path(movie) 
+    = link_to 'Destroy', movie, :confirm => 'Are you sure?', :method => :delete 
+  .clear
+
+
