@@ -1,5 +1,7 @@
-%h1= "Listing movies"
-= link_to 'New movie', new_movie_path
+.rfloat.menu
+  = link_to 'Aktorzy', new_movie_path
+  = link_to 'Dodaj film', new_movie_path
+%h1= "Filmy"
 
 = render_partial :collection => @movies
 

@@ -1,27 +1,18 @@
 - form_for @movie, :html => { :multipart => true } do |f|
   = f.error_messages
-  %p
-    = f.label :title
-  %p
-    = f.text_field :title
-  %p
-    = f.label :description
-  %p
-    = f.text_area :description
-  %p
-    = f.label :director
-  %p
-    = f.text_field :director 
-  %p
-    = f.label :premiere 
-  %p
-    = f.text_field :premiere
-  %p
-    =f.label :photo
-  %p
-    = image_tag @movie.photo.url(:small)
-  %p
-    = f.file_field :photo
-  %p
-    = f.submit 'Wyślij'
+  = f.label :title, "Tytuł" 
+  = f.text_field :title
+  = f.label :description, "Opis"
+  = f.text_area :description
+  = f.label :director, "Reżyser"
+  = f.text_field :director 
+  = f.label :premiere, "Premiera"
+  .date= f.date_select :premiere, :order => [:day, :month, :year], :prompt => { :day => 'Dzień', :month => 'Miesiąc', :year => 'Rok' }
+  =f.label :photo, "Okładka"
+  - if @movie.new_record?
+    .img= image_tag "/photos/small/missing.png"
+  - else
+    .img= image_tag @movie.photo.url(:small)
+  = f.file_field :photo, :value => @movie.photo
+  = f.submit 'Zapisz', :class => "submit"
 

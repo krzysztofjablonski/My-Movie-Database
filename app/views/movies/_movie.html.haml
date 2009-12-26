@@ -1,4 +1,4 @@
-.box.rounded
+.box.rounded.movie
   %span.photo
     = link_to image_tag(movie.photo.url(:small), :alt => movie.title), movie.photo.url, :rel => "prettyPhoto" 
   %h2
@@ -8,16 +8,16 @@
     =h movie.director 
   %p
     %strong= "Premiera: "
-    =h movie.premiere 
+    =h movie.premiere.to_date unless movie.premiere.nil?
   .clear
   %p
-    %p
-      %strong= "Opis:"
+    %strong= "Opis:"
+  %p
     =h movie.description
   .clear 
   .rfloat
-    = link_to 'Edit', edit_movie_path(movie) 
-    = link_to 'Destroy', movie, :confirm => 'Are you sure?', :method => :delete 
+    = link_to 'Edytuj', edit_movie_path(movie) 
+    = link_to 'Usuń', movie, :confirm => 'Jesteś pewien?', :method => :delete 
   .clear
 
 

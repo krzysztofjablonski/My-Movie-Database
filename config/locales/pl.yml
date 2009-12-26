@@ -1,0 +1,65 @@
+pl:
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%d %b"
+      long: "%d %B %Y"
+    day_names: [Niedziela, Poniedziałek, Wtorek, Środa, Czwartek, Piątek, Sobota]
+    abbr_day_names: [nie, pon, wto, śro, czw, pia, sob]
+    month_names: [~, Styczeń, Luty, Marzec, Kwiecień, Maj, Czerwiec, Lipiec, Sierpień, Wrzesień, Październik, Listopad, Grudzień]
+    abbr_month_names: [~, sty, lut, mar, kwi, maj, cze, lip, sie, wrz, paź, lis, gru]
+    order: [ :year, :month, :day ]
+
+  time:
+    formats:
+      default: "%a, %d %b %Y, %H:%M:%S %z"
+      short: "%d %b, %H:%M"
+      long: "%d %B %Y, %H:%M"
+    am: "przed południem"
+    pm: "po południu"
+
+  next: Następne
+  previous: Poprzednie
+
+  activerecord:
+    attributes:
+      movie:
+        title: Tytuł
+        description: Opis
+        photo: Okładka
+        director: Reżyser
+        premiere: Premiera
+    errors:
+      template:
+        header:
+          one: Podczas wypełniania formularza wystąpił błąd
+          other: Podczas wypełniania formularza wystąpiły błędy
+        body: Błędy dotyczą następujących pól
+      messages:
+        inclusion: nie znajduje się na liście dopuszczalnych wartości
+        exclusion: znajduje się na liście zabronionych wartości
+        invalid: jest nieprawidłowe
+        confirmation: nie zgadza się z potwierdzeniem
+        accepted: musi być zaakceptowane
+        empty: nie może być puste
+        blank: nie może być puste
+        too_long: jest za długie (maksymalnie {{count}} znaków)
+        too_long: jest za długie (maksymalnie {{count}} znaków)
+        too_short: jest za krótkie (minimalnie {{count}} znaków)
+        wrong_length: jest nieprawidłowej długości (powinna wynosić {{count}} znaków)
+        taken: zostało już zajęte
+        not_a_number: musi być liczbą
+        greater_than: musi być większe niż {{count}}
+        greater_than_or_equal_to: musi być większe lub równe {{count}}
+        equal_to: musi być równe {{count}}
+        less_than: musie być mniejsze niż {{count}}
+        less_than_or_equal_to: musi być mniejsze lub równe {{count}}
+        odd: musi być nieparzyste
+        even: musi być parzyste
+      models:
+        movie:
+          attributes:
+            title:
+              blank: nie może być pusty
+            description:
+              blank: nie może być pusty

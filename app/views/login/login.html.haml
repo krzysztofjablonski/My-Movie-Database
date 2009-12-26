@@ -1,0 +1,10 @@
+.box
+  %h2{:style => "text-align: center"}= "Logowanie do bazy"
+  - form_tag '/' do
+    = label_tag "Login"
+    = text_field_tag :login
+    = label_tag "Haslo"
+    = password_field_tag :pass
+    = label_tag "Baza"
+    = text_field_tag :database
+    = submit_tag "Zaloguj", :class => "submit"

@@ -3,7 +3,7 @@
 //
  $(document).ready(function(){
     $("a[rel^='prettyPhoto']").prettyPhoto({
-      theme: 'dark_rounded', /* light_rounded / / light_square / dark_square / facebook */
+      theme: 'light_rounded', /* light_rounded / / light_square / dark_square / facebook */
 
       });
  });
