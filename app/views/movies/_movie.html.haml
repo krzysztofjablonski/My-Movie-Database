@@ -4,6 +4,9 @@
   %h2
     =h movie.title
   %p
+    %strong= "Kategoria: "
+    =h movie.category.name unless movie.category.nil?
+  %p
     %strong= "Reżyser: "
     =h movie.director 
   %p
@@ -14,6 +17,11 @@
     %strong= "Opis:"
   %p
     =h movie.description
+  %p
+    %strong= "Obsada:"
+  %p
+    - movie.actors.each do |actor|
+      = link_to image_tag(actor.picture.url(:small), :alt => actor.name), actor.picture.url, :rel => "prettyPhoto"
   .clear 
   .rfloat
     = link_to 'Edytuj', edit_movie_path(movie) 

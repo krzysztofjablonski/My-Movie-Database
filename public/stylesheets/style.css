@@ -25,7 +25,7 @@ label {
   font-weight: bold;
 }
 
-input, textarea{
+input, textarea {
   margin: 5px 0;
   width: 510px;  
 }
@@ -38,7 +38,7 @@ textarea {
   height: 150px;
 }
 
-.date, .img {
+.date, .img , .category{
   margin: 5px 0;
 }
 
@@ -58,11 +58,10 @@ a, a:visited, a:hover {
 }
 
 .menu a {
-  margin: 0px 15px;
+  margin: 0px 8px;
 }
 
 .fieldWithErrors input, .fieldWithErrors textarea {
-  border: 2px solid red;
 }
 
 #errorExplanation {
@@ -125,6 +124,17 @@ a, a:visited, a:hover {
 
 }
 
+.box a {
+  color: #999;
+  font-size: 14px;
+}
+
+.fullname {
+  font-weight: bold;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
 .logo {
   border: none;
 }
@@ -169,5 +179,37 @@ h1 {
 
 img {
   border: 1px solid #000;
+}
+
+ul {
+  margin: 5px 0px;
+  padding 0;
+}
+
+li {
+  margin: 0 0 0 -20px;
+  padding: 0;
+}
+
+.pagination {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.search {
+  display: none;
+}
+
+#flash_notice {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+
+#flash_error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
 }
 

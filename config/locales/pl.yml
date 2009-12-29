@@ -29,6 +29,9 @@ pl:
         photo: Okładka
         director: Reżyser
         premiere: Premiera
+        category_id: Kategoria
+      actor:
+        name: Imię i nazwisko
     errors:
       template:
         header:
@@ -41,8 +44,8 @@ pl:
         invalid: jest nieprawidłowe
         confirmation: nie zgadza się z potwierdzeniem
         accepted: musi być zaakceptowane
-        empty: nie może być puste
-        blank: nie może być puste
+        empty: nie może być pusty
+        blank: nie może być pusty
         too_long: jest za długie (maksymalnie {{count}} znaków)
         too_long: jest za długie (maksymalnie {{count}} znaków)
         too_short: jest za krótkie (minimalnie {{count}} znaków)
@@ -59,7 +62,9 @@ pl:
       models:
         movie:
           attributes:
-            title:
-              blank: nie może być pusty
-            description:
-              blank: nie może być pusty
+            category_id:
+              blank: nie może być pusta
+        actor:
+          attributes:
+            name:
+              blank: nie może być puste

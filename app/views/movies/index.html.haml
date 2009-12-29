@@ -1,9 +1,29 @@
 .rfloat.menu
-  = link_to 'Aktorzy', new_movie_path
+  %span.search_button= link_to "Szukaj", "#"
+  = link_to 'Aktorzy', actors_path
+  = link_to 'Statystyki', stats_path
   = link_to 'Dodaj film', new_movie_path
+
 %h1= "Filmy"
 
-= render_partial :collection => @movies
+.box.search
+  - form_for @searchlogic do |f| 
+    = f.label :title_like, "Tytul"
+    = f.text_field :title_like
+    = f.label :director_like, "Reżyser"
+    = f.text_field :director_like
+    = f.label :actors_name_like, "Aktorzy"
+    = f.text_field :actors_name_like
+    = label_tag "Kategoria"
+    = f.collection_select (:category_id_equals, Category.all, :id, :name, {:include_blank => true}) 
+    .rfloat= submit_tag "Szukaj", :class => 'submit'
+    .clear
+
+- if @movies.blank?      
+  .box= "Nie znaleziono żadnych filmów"
+- else
+  = render_partial :collection => @movies
+= will_paginate @posts
 
 %br
 

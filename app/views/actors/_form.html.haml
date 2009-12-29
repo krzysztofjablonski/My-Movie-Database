@@ -1,0 +1,12 @@
+- form_for @actor, :html => {:multipart => true} do |f|
+  = f.error_messages
+  = f.label :name, 'Imię i nazwisko'
+  = f.text_field :name
+  = f.label :picture, "Zdjęcie"
+
+  - if @actor.new_record?
+    .img= image_tag "/pictures/small/missing.png"
+  - else
+    .img= image_tag @actor.picture.url(:small)
+  = f.file_field :picture
+  = f.submit 'Zapisz', :class => 'submit'

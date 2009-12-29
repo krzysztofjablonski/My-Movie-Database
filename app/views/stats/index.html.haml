@@ -1,0 +1,13 @@
+.rfloat.menu
+  = link_to 'Aktorzy', actors_path
+  = link_to 'Filmy', movies_path
+
+%h1= "Statystyki"
+
+.box
+  %p
+    %strong= "Filmów: "
+    = @filmy
+  %p
+    %strong= "Aktorów: "
+    = @aktorzy

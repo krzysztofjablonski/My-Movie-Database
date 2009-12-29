@@ -1,0 +1,24 @@
+.rfloat.menu
+  %span.search_button= link_to "Szukaj", "#"
+  = link_to 'Filmy', movies_path
+  = link_to 'Statystyki', stats_path
+  = link_to 'Dodaj aktora', new_actor_path
+
+%h1= "Aktorzy"
+
+.box.search
+  - form_for @searchlogic do |f| 
+    = f.label :name_like, "Imię i nazwisko"
+    = f.text_field :name_like
+    = f.label :movies_title_like, "Filmy"
+    = f.text_field :movies_title_like
+    .rfloat= submit_tag "Szukaj", :class => 'submit'
+    .clear
+- if @actors.blank?
+  .box= "Nie znaleziono żadnych aktorów"
+- else
+  = render_partial :collection => @actors
+
+= will_paginate @actors
+
+%br

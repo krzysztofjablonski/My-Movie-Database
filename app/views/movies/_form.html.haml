@@ -2,6 +2,8 @@
   = f.error_messages
   = f.label :title, "Tytuł" 
   = f.text_field :title
+  = f.label :category, "Kategoria"
+  .category= f.collection_select(:category_id, Category.all, :id, :name, {:prompt => "Wybierz kategorie"})
   = f.label :description, "Opis"
   = f.text_area :description
   = f.label :director, "Reżyser"
@@ -13,6 +15,7 @@
     .img= image_tag "/photos/small/missing.png"
   - else
     .img= image_tag @movie.photo.url(:small)
-  = f.file_field :photo, :value => @movie.photo
+  = f.file_field :photo
+  = f.label :all_actors, 'Aktorzy'
+  = f.text_field :all_actors
   = f.submit 'Zapisz', :class => "submit"
-

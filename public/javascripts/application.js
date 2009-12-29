@@ -4,6 +4,11 @@
  $(document).ready(function(){
     $("a[rel^='prettyPhoto']").prettyPhoto({
       theme: 'light_rounded', /* light_rounded / / light_square / dark_square / facebook */
+    });
+    $(".search_button a").click(function(e) {
+      e.preventDefault();
+      $(".search").toggle();
 
-      });
+    });
+
  });

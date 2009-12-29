@@ -1,0 +1,20 @@
+.box.rounded.actor
+  .fullname
+    %span.photo
+      = link_to image_tag(actor.picture.url(:small), :alt => actor.name), actor.picture.url, :rel => 'prettyPhoto'
+    = h actor.name
+  .clear
+  %p
+    %strong= "Filmy"
+  %ul
+    - actor.movies.each do |movie|
+      %li=h movie.title
+      
+
+  .clear
+  .rfloat
+    = link_to 'Edytuj', edit_actor_path(actor) 
+    = link_to 'Usuń', actor, :confirm => 'Jesteś pewien?', :method => :delete 
+  .clear
+ 
+

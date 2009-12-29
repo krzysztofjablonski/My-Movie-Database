@@ -14,9 +14,15 @@ class ApplicationController < ActionController::Base
 
   def database_access 
     begin
-      return true if session['connected'] 
+      if session['connected']
+        ActiveRecord::Base.establish_connection(:adapter  => "oracle_enhanced", :username => session['login'], :password => session['pass'], :database => session['database'])
+        ActiveRecord::Base.connection
+        return true
+      end
+
       conn = OCI8.new(params[:login],params[:pass], params[:database])
       conn.logoff
+
       ActiveRecord::Base.establish_connection(
         :adapter  => "oracle_enhanced",
         :username => params[:login],
@@ -24,6 +30,11 @@ class ApplicationController < ActionController::Base
         :database => params[:database]
       )
       ActiveRecord::Base.connection
+
+      session['login'] = params[:login]
+      session['pass'] = params[:pass]
+      session['database'] = params[:database]
+
       session['connected'] = true
     rescue
       render "login/login"
