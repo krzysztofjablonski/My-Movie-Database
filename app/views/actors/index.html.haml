@@ -6,7 +6,7 @@
 
 %h1= "Aktorzy"
 
-.box.search
+.box.search{:style => ("display: block" if search_actor?)}
   - form_for @searchlogic do |f| 
     = f.label :name_like, "Imię i nazwisko"
     = f.text_field :name_like

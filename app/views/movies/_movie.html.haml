@@ -21,7 +21,7 @@
     %strong= "Obsada:"
   %p
     - movie.actors.each do |actor|
-      = link_to image_tag(actor.picture.url(:small), :alt => actor.name), actor.picture.url, :rel => "prettyPhoto"
+      = link_to image_tag(actor.picture.url(:small), :alt => actor.name), actor.picture.url, :rel => "prettyPhoto[movie_#{movie.id}]"
   .clear 
   .rfloat
     = link_to 'Edytuj', edit_movie_path(movie) 

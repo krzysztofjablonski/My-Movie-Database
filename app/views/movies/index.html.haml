@@ -6,7 +6,7 @@
 
 %h1= "Filmy"
 
-.box.search
+.box.search{:style => ("display: block" if search_movie?)}
   - form_for @searchlogic do |f| 
     = f.label :title_like, "Tytul"
     = f.text_field :title_like
